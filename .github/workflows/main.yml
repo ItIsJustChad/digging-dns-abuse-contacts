@@ -1,0 +1,35 @@
+name: Upload JSON to GCS
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
+jobs:
+  upload-files:
+    name: Upload JSON files to Google Cloud Storage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: 'google-github-actions/auth@v2'
+        with:
+          workload_identity_provider: '${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+
+      - name: Upload files to GCS
+        uses: 'google-github-actions/upload-cloud-storage@v2'
+        with:
+          parent: '${{ secrets.GCS_BUCKET }}'
+          source: 'registrars.json,registries.json'
+          destination: 'abuse-contacts/'
+          headers: |-
+            cache-control: public, max-age=3600
+
