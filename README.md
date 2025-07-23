@@ -8,7 +8,7 @@ Want to bookmark a resource for easy searching and access? [Use Digging DNS to s
 
 ## About This Project
 
-Registrars and registries are required to provide a contact for submitting reports about abusive domains. However, this information has become more difficult to track in the wake of the updated agreements ICANN and their parties hold. [You can read more about it here](https://www.diggingdns.com/modules/tools/diggingdns-abuse-contacts).
+Registrars and registries are required to provide a contact for submitting reports about abusive domains. However, this information has become more difficult to track in the wake of the updated agreements ICANN and their parties hold. [You can read more about it here](https://www.diggingdns.com/modules/tools/digging-dns-abuse-contacts).
 
 This project solves that problem by providing a community resource to collaborate and track where abuse should be reported.
 
