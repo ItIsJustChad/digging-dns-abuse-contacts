@@ -24,8 +24,8 @@ def convert_registries_to_json(csv_path, json_path):
         with open(csv_path, mode='r', encoding='utf-8') as csv_file:
             reader = csv.DictReader(csv_file)
             for row in reader:
-                # The first column name in registries.csv is 'string'
-                tld = row.get('string', '').strip()
+                # The first column name in registries.csv is 'tld'
+                tld = row.get('tld', '').strip()
                 if not tld:
                     continue  # Skip rows that don't have a TLD
 
